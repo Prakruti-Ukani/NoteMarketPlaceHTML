@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        <!--title-->
+        <title>Notes Marketplace</title>
+
+        <!--favicon-->
+        <link rel="shortcut icon" href="img/all/favicon.ico">
+
+       <!--font-->
+       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+       <!--bootstrap css-->
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+
+       <!--custom css-->
+        <link rel="stylesheet" href="css/custom_css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+    </head>
+    <body>
+        <!--navbar-->
+        
+        <div class="navigation-wrap  start-header start-style">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                    
+                        <a class="navbar-brand"><img src="img/home/logo.png" alt="logo"></a>    
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            
+                        </button>
+                        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                
+                                <li class="nav-item">
+                                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a  class="nav-link" role="button"  data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Notes</a>
+                                    <div class="dropdown-menu" aria-labelledby="notesLink">
+                                            <a class="dropdown-item" href="under_review.html">Notes Under Review</a>
+                                            <a class="dropdown-item" href="notes_report.html">Published Notes</a>
+                                            <a class="dropdown-item" href="download_notes.html">Downloaded Notes</a>
+                                            <a class="dropdown-item" href="rejected_notes.html">Rejected Notes</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="buyer_request.html" class="nav-link">Members</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" role="button"  data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Reports</a>
+                                    <div class="dropdown-menu" aria-labelledby="reportLink">
+                                            <a class="dropdown-item" href="spam_reports.html">Spam Reports</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="contact_us.html" class="nav-link">settings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <div class="dropdown">
+                                        <img src="img/all/reviewer-1.png" role="button"  data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">
+                                        <div class="dropdown-menu" aria-labelledby="profileLink">
+                                            <a class="dropdown-item" href="update_profile.html">Update Profile</a>
+                                            <a class="dropdown-item" href="change_password.html">Change Password</a>
+                                            <a class="dropdown-item" href="login.html">LogOut</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="login.html">
+                                        <button type="button" class="btn btn-outline-primary btn-login">LogOut</button>
+                                    </a>
+                                    
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </nav>  
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--navbar end-->
+       
+        <section id="add_page">
+           <div class="content-box-md">
+            <div class ="container">
+                <div class="row" style="padding-top: 60px;">
+                        <div class="col-md-8">
+                            <div class="heading" style="margin-bottom: 20px;">
+                                <h3>Add Administrator</h3>
+                            </div>
+                        </div>
+                    </div>
+                
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            
+                            <div class="form-group">
+                                    <label>First Name *</label>
+                                    <input type="text" class="form-control" id="fn" placeholder="Enter your first name" required>
+                            </div>
+                            <div class="form-group">
+                                    <label>Last Name *</label>
+                                    <input type="text" class="form-control" id="ln" placeholder="Enter your last name" required>
+                            </div>
+                            <div class="form-group">
+                                    <label>Email *</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter your EmailId" required>
+                            </div>
+                            <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            
+                                            <select id="phone" class="form-control filter arrow-down">
+                                                <option selected>+91</option>
+                                                <option></option>
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" id="phone" placeholder="Enter your Phone number" required>
+                                        </div>
+                                    </div>
+                            </div> 
+                              
+                        </div>
+                    </div>
+                        
+                    <button type="submit" >SUBMIT</button>
+                </form>
+            </div>
+           </div>
+        </section>
+
+        <!--footer-->
+        <section id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5 col-sm-6 col-12 version">
+                            <p> version: 1.1.24</p>
+                    </div>
+                    <div class="col-md-6 text-right col-sm-6 col-12">
+                      <p>copyright &copy; TatvaSoft All rights reserved</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--footer end-->
+        
+
+
+
+        <!--jquery-->
+        <script src="js/jquery.js"></script>
+
+       
+        <!--bootstrap jquery-->
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        
+    </body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

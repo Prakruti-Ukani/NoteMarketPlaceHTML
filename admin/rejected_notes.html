@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        <!--title-->
+        <title>Notes Marketplace</title>
+
+        <!--favicon-->
+        <link rel="shortcut icon" href="img/all/favicon.ico">
+
+       <!--font-->
+       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+       <!--bootstrap css-->
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+
+
+       <!--custom css-->
+        <link rel="stylesheet" href="css/custom_css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+    </head>
+    <body>
+        <!--navbar-->
+
+        <div class="navigation-wrap  start-header start-style">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                    
+                        <a class="navbar-brand"><img src="img/home/logo.png" alt="logo"></a>    
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            
+                        </button>
+                        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                
+                                <li class="nav-item">
+                                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a  class="nav-link" role="button"  data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Notes</a>
+                                    <div class="dropdown-menu" aria-labelledby="notesLink">
+                                            <a class="dropdown-item" href="under_review.html">Notes Under Review</a>
+                                            <a class="dropdown-item" href="notes_report.html">Published Notes</a>
+                                            <a class="dropdown-item" href="download_notes.html">Downloaded Notes</a>
+                                            <a class="dropdown-item" href="rejected_notes.html">Rejected Notes</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="buyer_request.html" class="nav-link">Members</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" role="button"  data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Reports</a>
+                                    <div class="dropdown-menu" aria-labelledby="reportLink">
+                                            <a class="dropdown-item" href="spam_reports.html">Spam Reports</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="contact_us.html" class="nav-link">settings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <div class="dropdown">
+                                        <img src="img/all/reviewer-1.png" role="button"  data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">
+                                        <div class="dropdown-menu" aria-labelledby="profileLink">
+                                            <a class="dropdown-item" href="update_profile.html">Update Profile</a>
+                                            <a class="dropdown-item" href="change_password.html">Change Password</a>
+                                            <a class="dropdown-item" href="login.html">LogOut</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="login.html">
+                                        <button type="button" class="btn btn-outline-primary btn-login">LogOut</button>
+                                    </a>
+                                    
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </nav>  
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--navbar end-->
+        
+        <section id="table-design">
+            <div class ="content-box-md">
+                <div class="container">
+                    <div class="row" style="padding-top: 60px;">
+                        <div class="col-md-12">
+                            <div class="heading">
+                                <h3>Rejected Notes</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-12 col-xl-12">
+                            <form class="manage-field">
+                                <div class="row">
+                                    <div class="col-md-5 col-lg-8 col-xl-8 col-12">
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          seller
+                                        </div>
+                                        <div class="col-md-12">
+                                          <div class="form-group">
+                                            <select id="month" class="form-control filter arrow-down" style="width: 170px;">
+                                                    <option selected>Select name</option>
+                                                    <option>..</option>
+                                                    <option>..</option>
+                                                    <option>..</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-5 col-lg-3 col-xl-3">
+                                        <div class="form-group  search-with-dropdown">
+                                          <br>
+                                            <img src="img/all/search-icon.png">
+                                            <input type="text" class="form-control" id="search-notes" placeholder="Search" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 search-btn-1 col-lg-1 col-xl-1">
+                                      <br>
+                                         <button>Search</button>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-format table-responsive">
+                            <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">SR No.</th>
+                                      <th scope="col">NOTE TITLE</th>
+                                      <th scope="col">CATAGORY</th>
+                                      <th scope="col" colspan="2">SELLER</th>
+                                      <th scope="col">DATE ADDED</th>
+                                      <th scope="col">REJECTED BY</th>
+                                      <th scope="col">REMARK</th>
+                                      
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1</td>
+                                      <td><a href="#">Software Engineer</a></td>
+                                      <td>IT</td>
+                                      <td>Khyati patel</td>
+                                      <td><img src="img/all/eye.png"></td>
+                                      <td>09-10-2020, 10:10</td>
+                                      <td>Raj Sheth</td>
+                                      <td>Lorem lpsum is dummy text priniting industry</td>
+                                      <td>
+                                        <div class="dropdown">
+                                          <img src="img/all/dots.png" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <div class="dropdown-menu" aria-labelledby="DownloadLink">
+                                            <a class="dropdown-item" href="#">Approve</a>
+                                            <a class="dropdown-item" href="#">Download Note</a>
+                                            <a class="dropdown-item" href="#">View More Details</a>
+                                            
+                                          </div>
+                                        </div>
+                                      </td>
+
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td><a href="#">Software Engineer</a></td>
+                                      <td>IT</td>
+                                      <td>Khyati patel</td>
+                                      <td><img src="img/all/eye.png"></td>
+                                      <td>09-10-2020, 10:10</td>
+                                      <td>Raj Sheth</td>
+                                      <td>Lorem lpsum is dummy text priniting industry</td>
+                                      <td>
+                                        <div class="dropdown">
+                                          <img src="img/all/dots.png" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <div class="dropdown-menu" aria-labelledby="DownloadLink">
+                                            <a class="dropdown-item" href="#">Approve</a>
+                                            <a class="dropdown-item" href="#">Download Note</a>
+                                            <a class="dropdown-item" href="#">View More Details</a>
+                                            
+                                          </div>
+                                        </div>
+                                      </td>
+
+                                    </tr>
+                                    
+                                    <tr>
+                                      <td>1</td>
+                                      <td><a href="#">Software Engineer</a></td>
+                                      <td>IT</td>
+                                      <td>Khyati patel</td>
+                                      <td><img src="img/all/eye.png"></td>
+                                      <td>09-10-2020, 10:10</td>
+                                      <td>Raj Sheth</td>
+                                      <td>Lorem lpsum is dummy text priniting industry</td>
+                                      <td>
+                                        <div class="dropdown">
+                                          <img src="img/all/dots.png" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <div class="dropdown-menu" aria-labelledby="DownloadLink">
+                                            <a class="dropdown-item" href="#">Approve</a>
+                                            <a class="dropdown-item" href="#">Download Note</a>
+                                            <a class="dropdown-item" href="#">View More Details</a>
+                                            
+                                          </div>
+                                        </div>
+                                      </td>
+
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td><a href="#">Software Engineer</a></td>
+                                      <td>IT</td>
+                                      <td>Khyati patel</td>
+                                      <td><img src="img/all/eye.png"></td>
+                                      <td>09-10-2020, 10:10</td>
+                                      <td>Raj Sheth</td>
+                                      <td>Lorem lpsum is dummy text priniting industry</td>
+                                      <td>
+                                        <div class="dropdown">
+                                          <img src="img/all/dots.png" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <div class="dropdown-menu" aria-labelledby="DownloadLink">
+                                            <a class="dropdown-item" href="#">Approve</a>
+                                            <a class="dropdown-item" href="#">Download Note</a>
+                                            <a class="dropdown-item" href="#">View More Details</a>
+                                            
+                                          </div>
+                                        </div>
+                                      </td>
+
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td><a href="#">Software Engineer</a></td>
+                                      <td>IT</td>
+                                      <td>Khyati patel</td>
+                                      <td><img src="img/all/eye.png"></td>
+                                      <td>09-10-2020, 10:10</td>
+                                      <td>Raj Sheth</td>
+                                      <td>Lorem lpsum is dummy text priniting industry</td>
+                                      <td>
+                                        <div class="dropdown">
+                                          <img src="img/all/dots.png" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <div class="dropdown-menu" aria-labelledby="DownloadLink">
+                                            <a class="dropdown-item" href="#">Approve</a>
+                                            <a class="dropdown-item" href="#">Download Note</a>
+                                            <a class="dropdown-item" href="#">View More Details</a>
+                                            
+                                          </div>
+                                        </div>
+                                      </td>
+
+                                    </tr>
+                                    
+                                  </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                 
+            </div>
+        </section>
+            <!--pagination-->
+           <div class="page">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center col-md-12">
+                         <div  id="pagination-list">
+                              <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#"><img src="img/all/left-arrow.png"></a></li>
+                                <li class="page-item  active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#"><img src="img/all/right-arrow.png"></a></li>
+                              </ul>
+                         </div>
+                    </div>
+                </div>
+            </div>
+           </div>
+           <!--pagination end-->
+           
+           
+        
+        <!--footer-->
+        <section id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5 col-sm-6 col-12 version">
+                            <p> version: 1.1.24</p>
+                    </div>
+                    <div class="col-md-6 text-right col-sm-6 col-12">
+                      <p>copyright &copy; TatvaSoft All rights reserved</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--footer end-->
+        
+
+
+
+        <!--jquery-->
+        <script src="js/jquery.js"></script>
+
+        <!--popper js-->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+       
+        <!--bootstrap jquery-->
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+
+
+
+       
+    </body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
