@@ -1,0 +1,526 @@
+@media(min-width: 1199px)
+{
+
+.site-header .navigation-wrapper
+{
+	position: absolute;
+	right: 0;
+}	
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px)
+{
+
+.site-header .navigation-wrapper
+{
+	position: absolute;
+	right: 0;
+}
+
+}
+
+
+/*small device portrait tablet,small desktop*/
+@media (min-width: 768px) and (max-width: 991px)
+{
+/*login*/
+#signup #logo
+{
+    position: relative;
+    top: 120px;
+}
+#signup .login-form
+{
+    top: 135px;
+    transform: translateY(0px);
+}
+#signup
+{
+    min-height: 1100px;
+}
+/*navigation*/
+.main-nav 
+{
+	background-color: #fff;
+}
+.site-header .header-wrapper .navigation-wrapper .main-nav .menu-navigation > li a
+{
+	color: #333333;
+	padding: 20px;
+	font-size: 18px;
+}
+.navigation-wrapper .btn-login {
+    background-color: #6255a5;
+    color: #fff;
+    width: 89px;
+    font-size: 16px;
+    line-height: 22px;
+    height: 40px;
+    border-radius: 3px;
+    font-style: 'Open Sans';
+
+}
+.nav-link
+{
+	padding: 20px 0;
+}
+.nav-item .btn-login
+{
+	margin-top: 20px;
+}
+/*heading*/
+.heading h3
+{
+    font-size: 26px;
+}
+/*file upload*/
+.picture-upload img{
+    margin: 25px 0 0 150px;
+}
+/*table design search field*/
+/*#table-design .search-icon #search-notes
+{
+   margin-left: -120px;
+}*/
+/*#table-design .search-icon img
+{
+    left: -120px;
+}*/
+#table-design .search-icon #search-notes
+{
+    margin-left: 0;
+}
+#table-design .dashboard-search .search-btn
+{
+    margin-left: -50px;
+}
+/*note details*/
+#note-left .notes-img img
+{
+    height: 180px;
+    width: 150px;
+    margin-top: 30px;
+}
+
+}
+
+
+/*extra small device lanscape phone,portrait tablet*/
+@media (max-width: 768px)
+{
+/*login*/
+#login #logo
+{
+    position: relative;
+    top: 20px;
+}
+#login .login-form
+{
+    top: 35px;
+    transform: translateY(0px);
+}
+/*navigation*/
+.main-nav 
+{
+	background-color: #fff;
+}
+.site-header .header-wrapper .navigation-wrapper .main-nav .menu-navigation > li a
+{
+	color: #333333;
+	padding: 20px;
+}
+.navigation-wrapper .btn-login {
+    background-color: #6255a5;
+    color: #fff;
+    width: 89px;
+    font-size: 16px;
+    line-height: 22px;
+    height: 40px;
+    border-radius: 3px;
+    font-style: 'Open Sans';
+}
+.nav-link
+{
+	padding: 10px 0;
+}
+.nav-item .btn-login
+{
+	margin-top: 10px;
+}
+/*heading*/
+.heading h3
+{
+    font-size: 26px;
+}
+/*file upload*/
+.picture-upload img{
+    margin: 25px 0 0 120px;
+} 
+/*faq page*/
+.panel-group .panel-heading a
+{
+    font-size: 14px;
+}
+.panel-group .panel-body 
+{
+    font-size: 12px;
+}
+/*home*/
+#home h3
+{
+    font-size: 35px;
+}
+/*note details*/
+#note-left h3
+{
+    margin-top: 20px;
+    font-size: 22px;
+}
+#note-left button
+{
+    margin-bottom: 30px;
+}
+#display-notes .notes-img img
+{
+    width: 100%;
+}
+#display-notes .notes-desc
+{
+    width: 100%;
+}
+/*profiledetails*/
+#details .heading h3
+{
+    font-size: 26px;
+}
+/*download notes*/
+#table-design .search-btn-1 button
+{
+    margin-left: 0px;
+}
+}
+
+
+
+/*--------phones and smaller devices*/
+@media (max-width: 480px)
+{
+
+/*logo*/
+.logo-wrapper img
+{
+		width: 200px;
+}
+.menuimg img
+{
+	width: 20px;
+	height: 20px;
+}
+/*login*/
+#login #logo
+{
+    position: relative;
+    top: 20px;
+}
+#login .login-form
+{
+    top: 35px;
+    transform: translateY(0px);
+}
+/*sign up*/
+#signup
+{
+    min-height: 850px;
+}
+/*navigation*/
+.main-nav 
+{
+	background-color: #fff;
+}
+.site-header .header-wrapper .navigation-wrapper .main-nav .menu-navigation > li a
+{
+	color: #333333;
+	padding: 20px;
+}
+.navigation-wrapper .btn-login {
+    background-color: #6255a5;
+    color: #fff;
+    width: 89px;
+    font-size: 16px;
+    line-height: 22px;
+    height: 40px;
+    border-radius: 3px;
+    font-style: 'Open Sans';
+
+}
+.nav-link
+{
+	padding: 10px 0;
+}
+.nav-item .btn-login
+{
+	margin-top: 10px;
+}
+/*heading*/
+.heading h3
+{
+    font-size: 24px;
+}
+.heading-center h3
+{
+    font-size: 26px;
+}
+/*file upload*/
+.picture-upload img{
+    margin: 25px 0 0 120px;
+} 
+/*table design search field*/
+#table-design .search-icon #search-notes
+{
+    width: 100%;
+}
+#table-design .search-btn button
+{
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+/*dashboard*/
+#dashboard .dashboard-box .seller-img
+{
+    margin-left: 100px;
+}
+/*faq page*/
+.panel-group .panel-heading a
+{
+    font-size: 14px;
+}
+.panel-group .panel-body 
+{
+    font-size: 12px;
+}
+/*home*/
+#home h3
+{
+    font-size: 30px;
+}
+#about-content-2 h3
+{
+    font-size: 24px;
+}
+#review h3
+{
+    font-size: 22px;
+}
+/*note details*/
+#note-left h3
+{
+    margin-top: 20px;
+    font-size: 22px;
+}
+#note-left button
+{
+    margin-bottom: 30px;
+}
+#display-notes .notes-img img
+{
+    width: 100%;
+}
+#display-notes .notes-desc
+{
+    width: 100%;
+}
+/*profiledetails*/
+#details .heading h3
+{
+    font-size: 24px;
+}
+/*dashboard*/
+#table-design .dashboard-search .search-btn
+{
+    margin-left: 0;
+}
+#table-design .dashboard-search #month
+{
+    margin-left: 0;
+}
+/*manage catagory*/
+.manage-field .search-btn-1 button
+{
+    margin-bottom: 10px;
+}
+#table-design button.add-btn
+{
+    margin-bottom: 10px;
+}
+.manage-field #search-notes
+{
+    margin-top: -20px;
+}
+#table-design .search-with-dropdown img
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.manage-field button
+{
+    margin-top: -30px;
+}
+}
+
+
+/*iphone 5*/
+@media (max-width: 320px)
+{
+
+/*logo*/
+.logo-wrapper img
+{
+		width: 200px;
+}
+.menuimg img
+{
+	width: 20px;
+	height: 20px;
+}
+/*login*/
+#login #logo
+{
+    position: relative;
+    top: 20px;
+}
+#login .login-form
+{
+    top: 35px;
+    transform: translateY(0px);
+}
+{
+    height: 1100px;
+}
+/*sign up*/
+#signup
+{
+    min-height: 900px;
+}
+/*navigation*/
+.main-nav 
+{
+	background-color: #fff;
+}
+.site-header .header-wrapper .navigation-wrapper .main-nav .menu-navigation > li a
+{
+	color: #333333;
+	padding: 20px;
+}
+.navigation-wrapper .btn-login {
+    background-color: #6255a5;
+    color: #fff;
+    width: 89px;
+    font-size: 16px;
+    line-height: 22px;
+    height: 40px;
+    border-radius: 3px;
+    font-style: 'Open Sans';
+
+}
+.nav-link
+{
+	padding: 10px 0;
+}
+.nav-item .btn-login
+{
+	margin-top: 10px;
+}
+/*heading*/
+.heading h3
+{
+    font-size: 24px;
+}
+.heading-center h3
+{
+    font-size: 22px;
+}
+/*dashboard*/
+#dashboard .dashboard-box .seller-img
+{
+    margin-left: 100px;
+}
+/*faq page*/
+.panel-group .panel-heading a
+{
+    font-size: 14px;
+}
+.panel-group .panel-body 
+{
+    font-size: 12px;
+}
+/*home*/
+#home h3
+{
+    font-size: 30px;
+}
+#about-content-2 h3
+{
+    font-size: 24px;
+}
+#review h3
+{
+    font-size: 22px;
+}
+/*note details*/
+#note-left h3
+{
+    margin-top: 20px;
+    font-size: 22px;
+}
+#note-left button
+{
+    margin-bottom: 30px;
+}
+#display-notes .notes-img img
+{
+    width: 100%;
+}
+#display-notes .notes-desc
+{
+    width: 100%;
+}
+/*profiledetails*/
+#details .heading h3
+{
+    font-size: 24px;
+}
+/*note details*/
+.notes-desc
+{
+    height: 330px;
+}
+/*manage catagory*/
+.manage-field .search-btn-1 button
+{
+    margin-bottom: 10px;
+}
+#table-design button.add-btn
+{
+    margin-bottom: 10px;
+}
+.manage-field #search-notes
+{
+    margin-top: -20px;
+}
+#table-design .search-with-dropdown img
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.manage-field button
+{
+    margin-top: -30px;
+}
+}
