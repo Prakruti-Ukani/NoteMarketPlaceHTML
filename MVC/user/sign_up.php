@@ -86,7 +86,7 @@ if(isset($_POST['submit']))
                                   <td style='font-size: 16px;color: #333333;font-weight: 400;height: 25px;'>Simply click below for email verification.</td>
                               </tr>
                               <tr>
-                                  <td style='height: 60px;'><button style='width: 540px;background-color: #6255a5;height: 50px;border-radius: 3px;font-size: 18px;color: #fff;line-height: 22px; border:transparent;text-transform: uppercase;'><a href='http://localhost/PHP/user/verify.php?id=$id' style='color:#fff;text-decoration:none'>verify email address</a></button></td>
+                                  <td style='height: 60px;'><button style='width: 540px;background-color: #6255a5;height: 50px;border-radius: 3px;font-size: 18px;color: #fff;line-height: 22px; border:transparent;text-transform: uppercase;'><a href='http://localhost/MVC/user/verify.php?id=$id' style='color:#fff;text-decoration:none'>verify email address</a></button></td>
                               </tr>
                           </table>
                          </body>
