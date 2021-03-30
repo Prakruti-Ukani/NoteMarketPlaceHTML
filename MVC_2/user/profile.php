@@ -40,7 +40,7 @@ $count=mysqli_num_rows($fetch_userdata);
 
             $update_user=mysqli_query($conn,"UPDATE user SET first_name='$fn',last_name='$ln' WHERE id=$uid");
 
-            $update_profile=mysqli_query($conn,"UPDATE user_profile SET dob='$dob',gender=$gender,country_code=$code,phone_no=$phone,address_line_1='$add1',address_line_2='$add2',city='$city',state='$state',zip_code=$zipcode,country=$country,university='$university',college='$college',modified_date=NOW() WHERE user_id=$uid");
+            $update_profile=mysqli_query($conn,"UPDATE user_profile SET dob='$dob',gender=$gender,country_code=$code,phone_no='$phone',address_line_1='$add1',address_line_2='$add2',city='$city',state='$state',zip_code=$zipcode,country=$country,university='$university',college='$college',modified_date=NOW() WHERE user_id=$uid");
 
             $profile_filearray = $_POST['profile_url'];
             $profile_pieces = explode("/", $profile_filearray);
@@ -271,11 +271,11 @@ while($get_row=mysqli_fetch_assoc($get_profile_data))
                                     
                             </div>
                             <div class="form-group">
-                                    <label>Phone Number</label>
+                                    <label>Phone Number *</label>
                                     <div class="row">
                                         <div class="col-md-4">
                                             
-                                            <select id="phone" class="form-control filter arrow-down" name="code">
+                                            <select id="phone" class="form-control filter arrow-down" name="code" required>
                                                 <?php
                                                     $result=mysqli_query($conn,"SELECT * FROM country WHERE isactive=1");
                                                     while($row=mysqli_fetch_assoc($result))
@@ -312,20 +312,20 @@ while($get_row=mysqli_fetch_assoc($get_profile_data))
                                     <input type="text" class="form-control" id="add1" placeholder="Enter your address" required name="add1" value="<?= (($count>0)?$db_add:'')?>">
                             </div>
                             <div class="form-group">
-                                    <label>City</label>
+                                    <label>City *</label>
                                     <input type="text" class="form-control" id="city" placeholder="Enter your city" required name="city" value="<?= (($count>0)?$db_city:'')?>">
                             </div>
                             <div class="form-group">
-                                    <label>Zipcode</label>
-                                    <input type="text" class="form-control" id="zipcode" placeholder="Enter your zipcode"  name="zipcode" value="<?= (($count>0)?$db_zipcode:'')?>">
+                                    <label>Zipcode *</label>
+                                    <input type="text" class="form-control" id="zipcode" placeholder="Enter your zipcode"  required name="zipcode" value="<?= (($count>0)?$db_zipcode:'')?>">
                             </div>
                             
 
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                    <label>Address line 2 </label>
-                                    <input type="text" class="form-control" id="add2" placeholder="Enter your address"  name="add2" value="<?= (($count>0)?$db_add2:'')?>">
+                                    <label>Address line 2 *</label>
+                                    <input type="text" class="form-control" id="add2" placeholder="Enter your address" required name="add2" value="<?= (($count>0)?$db_add2:'')?>">
                             </div>
                             <div class="form-group">
                                     <label>State *</label>
@@ -363,13 +363,13 @@ while($get_row=mysqli_fetch_assoc($get_profile_data))
                         <div class="col-md-6">
                             <div class="form-group">
                                     <label>University</label>
-                                    <input type="text" class="form-control" id="university" placeholder="Enter your university" required name="university" value="<?= (($count>0)?$db_university:'')?>">
+                                    <input type="text" class="form-control" id="university" placeholder="Enter your university" name="university" value="<?= (($count>0)?$db_university:'')?>">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                     <label>College</label>
-                                    <input type="text" class="form-control" id="college" placeholder="Enter your college" required name="college" value="<?= (($count>0)?$db_college:'')?>">
+                                    <input type="text" class="form-control" id="college" placeholder="Enter your college" name="college" value="<?= (($count>0)?$db_college:'')?>">
                             </div>
                         </div>
                     </div>
