@@ -329,7 +329,7 @@ session_start();
                                     <?php
                                     while($row=mysqli_fetch_assoc($published_result)) {?>
                                       <tr>
-                                      <td><?php echo $row['created_date'] ?></td>
+                                      <td><?php echo $row['published_date'] ?></td>
                                       <td><?php echo $row['title'] ?></td>
                                       <td><?php echo $row['name'] ?></td>
                                       <td><?php echo $row['value'] ?></td>
