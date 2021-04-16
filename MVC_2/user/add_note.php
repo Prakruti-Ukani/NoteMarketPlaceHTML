@@ -32,7 +32,14 @@ if(isset($_GET['note_id']))
         $code=$_POST['code'];
         $professor=$_POST['professor'];
         $mode=$_POST['mode'];
-        $price=$_POST['price'];
+        if(isset($_POST['price']))
+        {
+            $price=$_POST['price']; 
+        }        
+        else
+        {
+            $price=0;
+        }
 
         $update_get_data=mysqli_query($conn,"UPDATE seller_note SET title='$title',catagory=$category,number_of_pages=$pages,description='$desc',university='$university',country=$country,course='$course',course_code='$code',professor='$professor',ispaid=$mode,note_type=$type,selling_price=$price WHERE id=$get_id;");
             
@@ -594,9 +601,13 @@ if(isset($_POST['publish']))
                             <div class="form-group">
                                     <label>Sell For*</label><br>
 
-                                    <input class="form-radio" type="radio" id="free" name="mode" style="height:20px; width:20px;" value="5"  <?=  (isset($_GET['note_id'])?(($db_mode==5)?"checked":' ') : ' ')?>>
-                                    <span class="sell-label">Free</span>
+                                    <label for="free">
+                                        <input class="form-radio" type="radio" id="free" name="mode" style="height:20px; width:20px;" value="5"  <?=  (isset($_GET['note_id'])?(($db_mode==5)?"checked":' ') : ' ')?>>
+                                        <span class="sell-label">Free</span>
+                                    </label>
+                                    <label for="paid">
                                     <input class="form-radio" type="radio" id="paid" name="mode" style="height:20px; width:20px;" value="4" <?=  (isset($_GET['note_id'])?(($db_mode==4)?"checked":' ') : ' ')?>><span class="sell-label">Paid</span>
+                                    </label>
                                     
                             </div>
                             <div class="form-group">
@@ -646,6 +657,20 @@ if(isset($_POST['publish']))
 
         <!--custom jquery-->
         <script src="js/script.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("input[name='mode']").click(function () {
+                    if ($("#paid").is(":checked")) {
+                        $("#price").removeAttr("disabled");
+                        $("#price").focus();
+                    } else {
+                        $("#price").attr("value","0");
+                        $("#price").attr("disabled", "disabled");
+                    }
+
+                });
+            });
+        </script>    
         
     </body>
 </html> 
