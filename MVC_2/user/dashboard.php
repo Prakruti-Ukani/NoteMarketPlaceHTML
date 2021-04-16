@@ -155,7 +155,7 @@ if (isset($_SESSION['login'])) {
           <div class="row">
             <div class="col-md-8">
               <div class="sub-heading">
-                <h3>My Rejected Notes</h3>
+                <h3>In Progress Notes</h3>
               </div>
             </div>
             <div class="col-md-4">
