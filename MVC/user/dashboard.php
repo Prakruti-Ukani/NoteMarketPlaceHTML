@@ -267,7 +267,7 @@ session_start();
               $find_pub_count=mysqli_query($conn,"SELECT * FROM seller_note WHERE status=9 AND title LIKE '%$search_field_2%'");
               $pub_count=mysqli_num_rows($find_pub_count);
               $pub_count=ceil($pub_count / $limit);
-              $published_query="SELECT sn.created_date,sn.title,sn.catagory,sn.ispaid,sn.selling_price,c.name,rd.value FROM seller_note sn INNER JOIN category c ON sn.catagory=c.id INNER JOIN reference_data rd ON sn.ispaid=rd.id WHERE title LIKE '%$search_field_2%' AND status=9 LIMIT $page_2,$limit";
+              $published_query="SELECT sn.published_date,sn.title,sn.catagory,sn.ispaid,sn.selling_price,c.name,rd.value FROM seller_note sn INNER JOIN category c ON sn.catagory=c.id INNER JOIN reference_data rd ON sn.ispaid=rd.id WHERE (sn.title LIKE '%$search_field_2%' OR c.name LIKE '%$search_field_2%') AND status=9 ORDER BY sn.published_date DESC LIMIT $page_2,$limit";
               $published_result=mysqli_query($conn,$published_query);
 
             }
@@ -276,7 +276,7 @@ session_start();
               $find_pub_count=mysqli_query($conn,"SELECT * FROM seller_note WHERE status=9");
               $pub_count=mysqli_num_rows($find_pub_count);
               $pub_count=ceil($pub_count / $limit);
-              $published_query="SELECT sn.created_date,sn.title,sn.catagory,sn.ispaid,sn.selling_price,c.name,rd.value FROM seller_note sn INNER JOIN category c ON sn.catagory=c.id INNER JOIN reference_data rd ON sn.ispaid=rd.id WHERE status=9 LIMIT $page_2,$limit";
+              $published_query="SELECT sn.published_date,sn.title,sn.catagory,sn.ispaid,sn.selling_price,c.name,rd.value FROM seller_note sn INNER JOIN category c ON sn.catagory=c.id INNER JOIN reference_data rd ON sn.ispaid=rd.id WHERE status=9 ORDER BY sn.published_date DESC LIMIT $page_2,$limit";
               $published_result=mysqli_query($conn,$published_query);
             }
             
