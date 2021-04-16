@@ -28,8 +28,14 @@ if(isset($_POST['save']))
     $code=$_POST['code'];
     $professor=$_POST['professor'];
     $mode=$_POST['mode'];
-    $price=$_POST['price'];
-
+    if(isset($_POST['price']))
+        {
+            $price=$_POST['price']; 
+        }        
+        else
+        {
+            $price=0;
+        }
         $save_query="INSERT INTO seller_note(seller_id, status, title, catagory, display_picture, note_type, number_of_pages, description, university, country, course, course_code, professor, ispaid, selling_price, notes_preview, created_date, created_by, modified_date, modified_by, isactive) VALUES ($uid,6,'$title',$category,'../upload/member/default/abc.png',$type,'$pages','$desc','$university',$country,'$course','$code','$professor',$mode,'$price','../upload/member/default/abc.png',now(),$uid,now(),$uid,1)";
 
             $data=mysqli_query($conn,$save_query);
@@ -174,9 +180,16 @@ if(isset($_POST['update']))
     $code=$_POST['code'];
     $professor=$_POST['professor'];
     $mode=$_POST['mode'];
-    $price=$_POST['price'];
+    if(isset($_POST['price']))
+        {
+            $price=$_POST['price']; 
+        }        
+        else
+        {
+            $price=0;
+        }
 
-    $update_get_data=mysqli_query($conn,"UPDATE seller_note SET title='$title',catagory=$category,number_of_pages=$pages,description='$desc',university='$university',country=$country,course='$course',course_code='$code',professor='$professor',ispaid=$mode WHERE id=$get_id;");
+    $update_get_data=mysqli_query($conn,"UPDATE seller_note SET title='$title',catagory=$category,number_of_pages=$pages,description='$desc',university='$university',country=$country,course='$course',course_code='$code',professor='$professor',ispaid=$mode,selling_price=$price WHERE id=$get_id;");
     if($update_get_data)
     {
         echo "success";
@@ -418,9 +431,15 @@ if(isset($_POST['publish']))
                         <div class="col-md-6">
                             <div class="form-group">
                                     <label>Sell For*</label><br>
-                                    <input class="form-radio" type="radio" id="free" name="mode" style="height:20px; width:20px;" value="4" <?php echo ($get_row['ispaid']==4)?'checked':'' ?>
-                                    ><span class="sell-label">Free</span>
-                                    <input class="form-radio" type="radio" id="paid" name="mode" style="height:20px; width:20px;" value="5" <?php echo ($get_row['ispaid']==5)?'checked':'' ?>><span class="sell-label">Paid</span>
+                                    <label for="free">
+                                        <input class="form-radio" type="radio" id="free" name="mode" style="height:20px; width:20px;" value="4" <?php echo ($get_row['ispaid']==4)?'checked':'' ?>>
+                                        <span class="sell-label">Free</span>
+                                    </label>
+                                    <label for="paid">
+                                        <input class="form-radio" type="radio" id="paid" name="mode" style="height:20px; width:20px;" value="5" <?php echo ($get_row['ispaid']==5)?'checked':'' ?>><span class="sell-label">Paid</span>
+                                    </label>
+                                    
+                                    
                                     
                                     
                             </div>
@@ -611,9 +630,14 @@ if(isset($_POST['publish']))
                         <div class="col-md-6">
                             <div class="form-group">
                                     <label>Sell For*</label><br>
-
-                                    <input class="form-radio" type="radio" id="free" name="mode" style="height:20px; width:20px;" value="4" ><span class="sell-label">Free</span>
-                                    <input class="form-radio" type="radio" id="paid" name="mode" style="height:20px; width:20px;" value="5" ><span class="sell-label">Paid</span>
+                                    <label for="free">
+                                        <input class="form-radio" type="radio" id="free" name="mode" style="height:20px; width:20px;" value="4" ><span class="sell-label">Free</span>
+                                    </label>
+                                    <label for="paid">
+                                        <input class="form-radio" type="radio" id="paid" name="mode" style="height:20px; width:20px;" value="5" ><span class="sell-label">Paid</span>
+                                    </label>
+                                    
+                                    
                                     
                             </div>
                             <div class="form-group">
@@ -659,5 +683,19 @@ if(isset($_POST['publish']))
         <!--custom jquery-->
         <script src="js/script.js"></script>
         
+        <script type="text/javascript">
+            $(function () {
+                $("input[name='mode']").click(function () {
+                    if ($("#paid").is(":checked")) {
+                        $("#price").removeAttr("disabled");
+                        $("#price").focus();
+                    } else {
+                        $("#price").attr("value","0");
+                        $("#price").attr("disabled", "disabled");
+                    }
+
+                });
+            });
+        </script>    
     </body>
 </html> 
