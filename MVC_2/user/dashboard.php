@@ -203,7 +203,7 @@ if (isset($_SESSION['login'])) {
                             <a href="delete_note.php?note_id=<?php echo $row['id'] ?>"><img src="img/front/delete.png"></a>
                           </td>
                         <?php } else { ?>
-                          <td><a href="add_note.php?note_id=<?php echo $row['id'] ?>"><img src="img/front/eye.png"></a></td>
+                          <td><a href="note_details.php?noteid=<?php echo $row['id'] ?>"><img src="img/front/eye.png"></a></td>
                         <?php } ?>
                       </tr>
                     <?php } ?>
@@ -223,16 +223,15 @@ if (isset($_SESSION['login'])) {
     if (isset($_POST['search_2']))
      {    
           $search_field_2=$_POST['search_2_txt'];
-          $published_query = "SELECT sn.created_date,sn.title,sn.catagory,sn.ispaid,sn.selling_price,c.name,rd.value FROM seller_note sn INNER JOIN category c ON sn.catagory=c.id INNER JOIN reference_data rd ON sn.ispaid=rd.id WHERE (sn.title LIKE '%$search_field_2%' OR c.name LIKE '%$search_field_2%') AND sn.status=9 AND sn.seller_id=$uid";
+          $published_query = "SELECT sn.published_date,sn.title,sn.catagory,sn.ispaid,sn.selling_price,c.name,rd.value,sn.id FROM seller_note sn INNER JOIN category c ON sn.catagory=c.id INNER JOIN reference_data rd ON sn.ispaid=rd.id WHERE (sn.title LIKE '%$search_field_2%' OR c.name LIKE '%$search_field_2%') AND sn.status=9 AND sn.seller_id=$uid ORDER BY sn.published_date DESC";
           $published_result = mysqli_query($conn, $published_query);
     } 
     else
     {
       
-          $published_query = "SELECT sn.created_date,sn.title,sn.catagory,sn.ispaid,sn.selling_price,c.name,rd.value,sn.id FROM seller_note sn INNER JOIN category c ON sn.catagory=c.id INNER JOIN reference_data rd ON sn.ispaid=rd.id WHERE sn.status=9 AND sn.seller_id=$uid";
+          $published_query = "SELECT sn.published_date,sn.title,sn.catagory,sn.ispaid,sn.selling_price,c.name,rd.value,sn.id FROM seller_note sn INNER JOIN category c ON sn.catagory=c.id INNER JOIN reference_data rd ON sn.ispaid=rd.id WHERE sn.status=9 AND sn.seller_id=$uid ORDER BY sn.published_date DESC";
           $published_result = mysqli_query($conn, $published_query);
     }
-
     if (!$published_result) {
       die('query failed' . mysqli_error($conn));
     }
@@ -281,7 +280,7 @@ if (isset($_SESSION['login'])) {
                     <?php
                     while ($row = mysqli_fetch_assoc($published_result)) { ?>
                       <tr>
-                        <td><?php echo $row['created_date'] ?></td>
+                        <td><?php echo $row['published_date'] ?></td>
                         <td><?php echo $row['title'] ?></td>
                         <td><?php echo $row['name'] ?></td>
                         <td><?php echo $row['value'] ?></td>
