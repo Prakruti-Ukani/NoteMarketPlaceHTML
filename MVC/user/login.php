@@ -134,7 +134,7 @@ if(isset($_POST['submit']))
                               <button type="submit" name="submit">Login</button>
                             </form>
                             
-                            <p id="label3"><span>Don't have an account? <a href="sign_up.html">Sign Up</a> </span></p>
+                            <p id="label3"><span>Don't have an account? <a href="sign_up.php">Sign Up</a> </span></p>
                         </div>
                     </div>
                 </div>
