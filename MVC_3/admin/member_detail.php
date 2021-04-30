@@ -25,6 +25,45 @@ foreach($member_query as $member_row)
     $country=$member_row['name'];
     $code=$member_row['zip_code'];
 }
+if(isset($_GET['dnote_id']))
+{
+  $dnote_id=$_GET['dnote_id'];
+  $attach_query = mysqli_query($conn, "SELECT * FROM seller_note_attachments WHERE note_id=$dnote_id");
+  $attach_count=mysqli_num_rows($attach_query);
+
+  if($attach_count<=1)
+  {
+      foreach ($attach_query as $attach_row) 
+      {
+            $attach_path = $attach_row['file_path'];
+            $file_name=$attach_row['file_name'];
+            if (file_exists($attach_path))
+            {
+                header('Cache-Control: public');
+                header('Content-Description: File Transfer');
+                header('Content-Disposition: attachment; filename=' . basename($file_name));
+                header('Content-Type: application/pdf');
+                header('Content-Transfer-Encoding:binary');
+                readfile($attach_path);
+            }
+      }
+  }
+  else
+  {
+          $zipName = "zip_" . time() . ".zip";
+          $zip_obj = new ZipArchive;
+          $zip_obj->open($zipName, ZipArchive::CREATE);
+          foreach ($attach_query as $attach_row) 
+          {
+              $attach_path = $attach_row['file_path'];
+              $zip_obj->addFile($attach_path);
+          }
+          $zip_obj->close();
+          header('Content-Type: application/zip');
+          header('Content-Disposition: attachment; filename=' . $zipName);
+          readfile($zipName);
+    }
+}
 
 ?>
 
@@ -218,7 +257,7 @@ foreach($member_query as $member_row)
                                         <div class="dropdown">
                                           <img src="img/all/dots.png" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                           <div class="dropdown-menu" aria-labelledby="DownloadLink">
-                                            <a class="dropdown-item" href="#">Download Notes</a>
+                                            <a class="dropdown-item" href="under_review.php?dnote_id=<?php echo $note_id  ?>">Download Note</a>
                                           </div>
                                         </div>
                                       </td>
