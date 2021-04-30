@@ -73,7 +73,7 @@ session_start();
                             <div class="col-lg-2 col-md-4 col-sm-4 col-12">
                                 <div class="form-group">
                                     <select id="type" class="form-control arrow-down" name="type" onchange="searchByDropdown(1);">
-                                        <option disabled selected>Select Type</option>
+                                        <option value=0 selected>Select Type</option>
                                         <?php
                                         $result = mysqli_query($conn, "SELECT * FROM type WHERE isactive=1");
                                         while ($row = mysqli_fetch_assoc($result)) {
@@ -89,7 +89,7 @@ session_start();
                             <div class="col-lg-2 col-md-4 col-sm-4 col-12">
                                 <div class="form-group">
                                     <select id="category" class="form-control arrow-down" name="category" onchange="searchByDropdown(1);">
-                                        <option disabled selected>Select category</option>
+                                        <option value=0 selected>Select category</option>
                                         <?php
                                         $result = mysqli_query($conn, "SELECT * FROM category WHERE isactive=1");
                                         while ($row = mysqli_fetch_assoc($result)) {
@@ -105,7 +105,7 @@ session_start();
                             <div class="col-lg-2 col-md-4 col-sm-4 col-12">
                                 <div class="form-group">
                                     <select id="university" class="form-control arrow-down" name="university" onchange="searchByDropdown(1);">
-                                        <option disabled selected>Select University</option>
+                                        <option value=0 selected>Select University</option>
                                         <?php
                                         $result = mysqli_query($conn, "SELECT DISTINCT university FROM seller_note WHERE status=9");
                                         while ($row = mysqli_fetch_assoc($result)) {
@@ -123,7 +123,7 @@ session_start();
                             <div class="col-lg-2 col-md-4 col-sm-4 col-12">
                                 <div class="form-group">
                                     <select id="course" class="form-control arrow-down" name="course" onchange="searchByDropdown(1);">
-                                        <option disabled selected>Select Course</option>
+                                        <option value=0 selected>Select Course</option>
                                         <?php
                                         $result = mysqli_query($conn, "SELECT DISTINCT course FROM seller_note WHERE status=9");
                                         while ($row = mysqli_fetch_assoc($result)) {
@@ -142,7 +142,7 @@ session_start();
                             <div class="col-lg-2 col-md-4 col-sm-4 col-12">
                                 <div class="form-group">
                                     <select id="country" class="form-control arrow-down" name="country" onchange="searchByDropdown(1);">
-                                        <option disabled selected>Select country</option>
+                                        <option value=0 selected>Select country</option>
                                         <?php
                                         $result = mysqli_query($conn, "SELECT * FROM country WHERE isactive=1");
                                         while ($row = mysqli_fetch_assoc($result)) {
@@ -158,7 +158,7 @@ session_start();
                             <div class="col-lg-2 col-md-4 col-sm-4 col-12">
                                 <div class="form-group">
                                     <select id="rate" class="form-control arrow-down" onchange="searchByDropdown(1);">
-                                        <option selected disabled >Select rating</option>
+                                        <option selected value=0 >Select rating</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
